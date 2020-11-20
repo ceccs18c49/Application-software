@@ -1,0 +1,30 @@
+Remya R Pillai
+CHN18CS101
+C(49)
+
+--------------------------------
+#1: SQL COMMANDS
+---------------------------------
+CREATE TABLE EMPLOYE(
+    -> empid INT,
+    -> NAME VARCHAR(70),
+    -> DEPT VARCHAR(50),
+    -> SALARY DECIMAL(10,2)
+    -> );
+--------------------------------
+CREATE TABLE EMPDETAILS(
+    -> LOCATION VARCHAR(40),
+    -> empid INT REFERENCES EMPLOYE(empid)
+    -> );
+--------------------------------
+SELECT * FROM EMPLOYE WHERE empid IN( SELECT empid FROM EMPDETAILS);
+--------------------------------
+SELECT * FROM EMPLOYE WHERE empid NOT IN(SELECT empid FROM EMPDETAILS);
+
+---------------------------------
+           
+       
+
+
+
+
