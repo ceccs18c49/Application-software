@@ -1,0 +1,35 @@
+CEC CS 18 C49
+Remya R Pillai
+
+---------------------------------
+#1:  SQL commands using constraints.
+---------------------------------
+   a) CREATE TABLE D_table(
+    -> code VARCHAR(30) PRIMARY KEY,
+    -> title VARCHAR(30) NOT NULL,
+    -> D_name VARCHAR(50) UNIQUE,
+    -> D_id INT,
+    -> Salary INT CHECK(Salary>2000)
+    -> );
+
+---------------------------------
+   b) CREATE TABLE I_table(
+    -> Name VARCHAR(50) NOT NULL,
+    -> code VARCHAR(20),
+    -> id INT DEFAULT 1
+    -> );
+
+---------------------------------
+   c)INSERT INTO D_table VALUES
+    -> ('E1','MANAGER','SALES',1,10000),
+    -> ('E2','ACCOUNTANT','FINANCE',2,3000);
+
+---------------------------------
+   d) INSERT INTO I_table VALUES
+    -> ('MONICA','A1',2),
+    -> ('JOHN','B3',3);
+
+      
+-------------------
+
+
