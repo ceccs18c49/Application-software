@@ -1,0 +1,40 @@
+Remya R Pillai
+CHN18CS101
+C(49)
+
+--------------------------------
+#1: SQL COMMANDS using TCL COMMANDS
+---------------------------------
+.)create table classs( name varchar(80) not null, id int PRIMARY KEY  AUTO_INCREMENT);
+
+--------------------------------
+.)insert into classs (name) values ("henry"),("melissa"),("catherine");
+
+--------------------------------
+.)select * from classs;
+
+--------------------------------
+.)START TRANSACTION;
+--------------------------------
+.)INSERT INTO classs (name) VALUES ("NEWMAN");
+--------------------------------
+.) ROLLBACK;
+--------------------------------
+.)INSERT INTO classs (name) VALUES ("NEWMAN");
+--------------------------------
+.)COMMIT;
+--------------------------------
+.)START TRANSACTION;
+--------------------------------
+.)SAVEPOINT ACE;
+--------------------------------
+.)INSERT INTO classs (name) VALUES ("AGT");
+--------------------------------
+.)ROLLBACK TO ACE;
+--------------------------------
+.)COMMIT;
+------------------------------------------
+
+
+---------------------------------
+           
