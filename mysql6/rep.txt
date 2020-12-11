@@ -1,0 +1,45 @@
+Remya R Pillai
+CHN18CS101
+C(49)
+
+--------------------------------
+#1: SQL COMMANDS using views and assertions
+---------------------------------
+ CREATE TABLE STORE(
+    -> o_no INT PRIMARY KEY,
+    -> code VARCHAR(50) NOT NULL,
+    -> item VARCHAR(50),
+    -> quantity INT ,
+    -> price decimal(10,2),
+    -> discount decimal(10,2),
+    -> mrp decimal(10,2));
+
+--------------------------------
+ INSERT INTO STORE VALUES
+    -> (1,'A','ipad',1,120000.00,0.00,120000.00),
+    -> (2,'M','dell laptop',1,75000.00,60.00,74940.00),
+    -> (3,'v',lifeband,1,5000.00,0.00,5000.00);
+
+
+--------------------------------
+SELECT * FROM STORE;
+
+--------------------------------
+ CREATE VIEW PRODUCT AS SELECT item,quantity FROM STORE;
+
+--------------------------------
+SELECT * FROM PRODUCT;
+
+--------------------------------
+ UPDATE STORE SET quantity=3 WHERE code='v';
+
+--------------------------------
+SELECT * FROM STORE;
+
+--------------------------------
+ SELECT * FROM PRODUCT;
+
+--------------------------------
+ DROP VIEW PRODUCT;
+------------------------------------------
+
