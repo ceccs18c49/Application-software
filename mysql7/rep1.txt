@@ -1,0 +1,36 @@
+Remya R Pillai
+CHN18CS101
+C(49)
+
+--------------------------------
+#1: SQL COMMANDS with functions
+---------------------------------
+CREATE TABLE STORE(
+    -> order_no INT NOT NULL,
+    -> item VARCHAR(60),
+    -> quantity INT,
+    -> Code VARCHAR(60),
+    -> price DECIMAL(10,2),
+    -> discount DECIMAL(10,2),
+    -> MRP DECIMAL(10,2)
+    -> );
+
+--------------------------------
+ INSERT INTO STORE VALUES
+    -> (69,'ipad mini',1,'a1',34000.00,0.00,34000.00),
+    -> (349,'samsung a70',9,'f3',288000.00,5000.00,27000.00),
+    -> ( 70,'lenove gt40','n0',57000.00,5000.00,57000.00),
+    -> ( 5,'powerbnk','y5',15000.00,0.00,15000.00);
+--------------------------------
+ SELECT * FROM STORE;
+
+--------------------------------
+SELECT MOD(MRP,9) FROM STORE;
+--------------------------------
+SELECT MRP,POWER(MRP,2) FROM STORE;
+--------------------------------
+SELECT ROUND(MRP/7,1) FROM STORE;
+
+---------------------------------
+           
+        
