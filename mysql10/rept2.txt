@@ -1,0 +1,32 @@
+CEC CS 18 C49
+Remya R Pillai
+
+EXPT 10 IMPLICIT CURSOR
+---------------------------------
+ CREATE TABLE EMPLOY(
+    -> CODE VARCHAR(60),
+    -> NAME VARCHAR(70),
+    -> DOB DATE,
+    -> SALARY DECIMAL(10,2) );
+
+
+
+---------------------------------
+ INSERT INTO EMPLOY VALUES
+    -> ('D3','ABIGALE','1992-07-25',70000.00),
+    -> ('G6','TERRA','1996-11-15',45000.00);
+
+
+---------------------------------
+ CREATE TABLE CUR(
+    -> NAME VARCHAR(70),
+    -> DOB DATE,
+    -> SALARY DECIMAL(10,2));
+
+-----------------------------------
+DELIMITER //                                                                    CREATE PROCEDURE IMP()                                                            BEGIN                                                                           DECLARE done INT DEFAULT FALSE;                                                 DECLARE EMP_NAME VARCHAR(20);                                                   DECLARE EMP_DOB DATE;                                                           DECLARE EMP_SALARY FLOAT;                                                       DECLARE EMP_RECORD CURSOR                                                     FOR SELECT NAME,DOB,SALARY FROM EMPLOY;                                          DECLARE CONTINUE HANDLER FOR NOT FOUND SET DONE='TRUE';                          OPEN EMP_RECORD;                                                                read_loop:LOOP                                                                  FETCH EMP_RECORD INTO                                                           EMP_NAME,EMP_DOB,EMP_SALARY;                                                    IF DONE THEN                                                                    LEAVE read_loop;                                                                ENF IF;                                                                         INSERT INTO CUR VALUES(EMP_NAME,EMP_DOB,EMP_SALARY);                            END LOOP;                                                                       CLOSE EMP_RECORD;                                                               END;//                                                                         DELIMITER;                                                                      CALL IMP();
+
+--------------------------------
+ SELECT * FROM CUR;
+
+--------------------------------
