@@ -1,0 +1,57 @@
+CEC CS 18 C49
+Remya R Pillai
+
+---------------------------------
+#1: CREATE TABLE SAILORS(
+    -> SID INTEGER,
+    -> S_NAME VARCHAR(60),
+    -> RATING INTEGER,
+    -> AGE INTEGER);
+INSERT INTO SAILORS VALUES
+    -> (1,'DESMOND',6,37),
+    -> (2,'PARKER',5,50),
+    -> (3,'BOB',7,32);
+
+
+---------------------------------
+ CREATE TABLE BOATS(
+    -> BID INTEGER,
+    -> B_NAME VARCHAR(60),
+    -> COLOUR VARCHAR(20) );
+
+ INSERT INTO BOATS VALUES
+    -> (101,'DELCRUZ','GREEN'),
+    -> (103,'BLUERAY','BLACK'),
+    -> (104,'RIVER','RED');
+
+
+---------------------------------
+   CREATE TABLE RESERVES(
+    -> SID INTEGER,
+    -> BID INTEGER,
+    -> DAY DATE );
+ INSERT INTO RESERVES VALUES
+    -> (1,101,'2021-01-10'),
+    -> (2,104,'2021-01-06'),
+    -> (2,104,'2021-01-10'),
+    -> (3,103,'2021-01-11');
+-----------------------------------
+
+SELECT A.SID,A.S_NAME,A.RATING,A.AGE FROM SAILORS AS A INNER JOIN RESERVES AS C ON A.SID=C.SID AND C.BID=101;
+
+------------------------------------
+
+SELECT A.S_NAME FROM SAILORS AS A INNER JOIN RESERVES AS C ON A.SID=C.BID AND B.COLOUR='RED' ORDER BY A.AGE;
+
+---------------------------------
+
+SELECT DISTINCT A.S_NAME FROM SAILORS AS A INNER JOIN RESERVES AS C ON A.SID IN (C.SID);
+ 
+----------------------------------
+
+SELECT A.SID,A.S_NAME FROM RESERVES AS C INNER JOIN RESERVES AS D ON C.SID<>D.SID AND C.DAY=D.DAY INNER JOIN SAILORS AS A ON D.SID=A.SID;
+
+----------------------------------
+
+
+----------------------------------      
