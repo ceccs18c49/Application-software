@@ -1,0 +1,42 @@
+CEC CS 18 C49
+Remya R Pillai
+
+---------------------------------
+#1:  EXPT 11 Write a DB trigger that prevents changes to emp table from 5pm to 12 am(statment level trigger).
+---------------------------------
+   CREATE TABLE EMPLOY(
+    -> CODE VARCHAR(70),
+    -> NAME VARCHAR(60),
+    -> DOB DATE NOT NULL,
+    -> DESIGNATION VARCHAR(50),
+    -> SALARY INT);
+ 
+
+---------------------------------
+  INSERT INTO EMPLOY VALUES ('A1','HENRY','1982-05-05','PROJECT DESIGNER',90000);
+  INSERT INTO EMPLOY VALUES ('K1','LUCY','1988-09-17','SALES ASSISTANT',60000);
+  INSERT INTO EMPLOY VALUES ('J2','ARRON','1993-07-09','CLERK'30000); 
+  
+  INSERT INTO EMPLOY VALUES ('S4','BEN','1996-03-13','ACCOUNTANT',50000);
+
+
+---------------------------------
+   DELIMITER$$       
+ CREATE TRIGGER INSERT_PREVENT        
+ BEFORE INSERT         
+ ON EMPLOY FOR EACH ROW          
+ BEGIN            
+  IF(CURRENT_TIME() BETWEEN '17.00' AND '00.00') THEN  
+  SIGNAL SQLSTATE'45000' SET                
+ MESSAGE_TEXT='NO CHANGES TO EMPLOYE TABLE';                 
+ END IF;                   
+END $$                 
+ DELIMETER;
+
+---------------------------------
+ DELIMITER $$                                                                     CREATE TRIGGER INSERT_PREVENT                                                   BEFORE INSERT                                                                   ON EMPLOY FOR EACH ROW                                                          BEGIN                                                                             IF(CURRENT_TIME() BETWEEN '17.00' AND '00.00') THEN                              SIGNAL SQLSTATE'45000' SET                                                      MESSAGE_TEXT='NO CHANGES TO EMPLOYE TABLE';                                     END IF;                                                                         END $$                                                                        DELIMETER;
+-----------------------------------
+DELIMITER $$                                                                     CREATE TRIGGER INSERT_PREVENT                                                   BEFORE UPDATE                                                                   ON EMPLOY FOR EACH ROW                                                          BEGIN                                                                             IF(CURRENT_TIME() BETWEEN '17.00' AND '00.00') THEN                              SIGNAL SQLSTATE'45000' SET                                                      MESSAGE_TEXT='NO CHANGES TO EMPLOYE TABLE';                                     END IF;                                                                         END $$                                                                        DELIMETER;
+
+
+----------------------------------      
