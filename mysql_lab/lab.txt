@@ -1,0 +1,54 @@
+Remya R Pillai
+CHN18CS101
+C(49)
+
+--------------------------------
+LAB EXAM part1
+---------------------------------
+CREATE TABLE EMPLOYEE
+(EMP_NO INT,
+ EM_NAME VARCHAR(),
+
+
+--------------------------------
+INSERT INTO EMPLOYEE VALUES(12,'HENRY','CALIFORNIA','098765658',303,'SALES',9809,80000,'henry34@gmai.com');
+INSERT INTO EMPLOYEE VALUES(16,'LISA','DENMARK','098765678',393,'SALES',9809,70000,'lisahy@gmail.com');
+INSERT INTO EMPLOYEE VALUES(86,'JAMES','INDIA','098765658',395,'SALES',9809,70000,'rempilli@gmail.com');
+
+
+--------------------------------
+ UPDATE employee
+SET e_address = "Nagpur"
+WHERE emp_no = 12;
+
+
+--------------------------------
+UPDATE EMPLOYEE
+SET EMAIL = NULL
+WHERE E_NAME = "JAMES";
+----------------------------------
+
+SELECT * FROM EMPLOYEE WHERE DEPT_NAME = "SALES";
+--------------------------------
+ 
+
+PART2 
+
+----------------
+ INSERT INTO EMPLOYEE(DESIGNATION,DOB) VALUES("PRESIDENT",'1981-05-01');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> INSERT INTO EMPLOYEE(DESIGNATION,DOB) VALUES("MGR",'1981-12-03');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO EMPLOYEE(DESIGNATION,DOB) VALUES("IT",'1981-09-02');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> SELECT EMP_NO,E_NAME,DOB,SALARY FROM EMPLOYEE WHERE SALARY>30000;
+
+SELECT * FROM  EMPLOYEE WHERE DOB in ("1981-05-01", "1981-12-03", "1981-12-17", "1980-01-19");
+SELECT * FROM EMPLOYEE WHERE DESIGNATION NOT in ("PRESIDENT", "MGR")  ORDER BY salary ASC;
+--------------------------------
+
+
+--------------------------------
